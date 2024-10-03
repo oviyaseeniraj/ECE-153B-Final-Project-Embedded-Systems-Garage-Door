@@ -1,0 +1,335 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Lily Chen, UCSB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\cyxli\Downloads\Part_B_and_C (2)\Part_B_and_C\project.uvprojx
+Project File Date:  06/10/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+src/DMA.c(107): warning: no newline at end of file [-Wnewline-eof]
+  107 | }
+      |  ^
+1 warning generated.
+compiling DMA.c...
+src/I2C.c(23): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   23 |         GPIOB->AFR[1] &= ~GPIO_AFRH_AFSEL8;
+      |         ^~~~~~~~~~
+src/stm32l476xx.h(1403): note: expanded from macro 'GPIOB'
+ 1403 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      |                             ^
+src/I2C.c(24): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   24 |         GPIOB->AFR[1] &= ~GPIO_AFRH_AFSEL9;
+      |         ^~~~~~~~~~
+src/stm32l476xx.h(1403): note: expanded from macro 'GPIOB'
+ 1403 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      |                             ^
+src/I2C.c(25): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   25 |         GPIOB->AFR[1] |= GPIO_AFRH_AFSEL8_2;
+      |         ^~~~~~~~~~
+src/stm32l476xx.h(1403): note: expanded from macro 'GPIOB'
+ 1403 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      |                             ^
+src/I2C.c(26): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   26 |         GPIOB->AFR[1] |= GPIO_AFRH_AFSEL9_2;
+      |         ^~~~~~~~~~
+src/stm32l476xx.h(1403): note: expanded from macro 'GPIOB'
+ 1403 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      |                             ^
+src/I2C.c(209): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  209 |                 I2Cx->TXDR = pData[i] & I2C_TXDR_TXDATA;  // TXE is cleared by writing to the TXDR register.
+      |                              ^~~~~
+src/I2C.c(237): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  237 |                 pData[i] = I2Cx->RXDR & I2C_RXDR_RXDATA;
+      |                 ^~~~~
+6 warnings generated.
+compiling I2C.c...
+compiling SysClock.c...
+assembling startup_stm32l476xx.s...
+src/SPI.c(134): warning: no newline at end of file [-Wnewline-eof]
+  134 | }
+      |  ^
+src/SPI.c(132): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  132 |         uint16_t read_data = 0xFFFF & SPI1->DR;
+      |                  ^
+2 warnings generated.
+compiling SPI.c...
+src/SysTimer.c(71): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   71 | void delay3sOpen()
+      |                 ^
+      |                  void
+src/SysTimer.c(88): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   88 | void delay3sClose()
+      |                  ^
+      |                   void
+src/SysTimer.c(103): warning: no newline at end of file [-Wnewline-eof]
+  103 | }
+      |  ^
+3 warnings generated.
+compiling SysTimer.c...
+compiling LED.c...
+src/main.c(32): warning: no previous extern declaration for non-static variable 'temp_th' [-Wmissing-variable-declarations]
+   32 | int temp_th = 27;
+      |     ^
+src/main.c(32): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   32 | int temp_th = 27;
+      | ^
+src/main.c(33): warning: no previous extern declaration for non-static variable 'duringDelay' [-Wmissing-variable-declarations]
+   33 | int duringDelay = 0;
+      |     ^
+src/main.c(33): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   33 | int duringDelay = 0;
+      | ^
+src/main.c(41): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   41 |         uint8_t SecondaryAddress = 0b1001000 << 1;
+      |                                    ^
+src/main.c(55): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   55 | void openDoor()
+      |              ^
+      |               void
+src/main.c(59): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   59 |         double x, y, z;
+      |                ^
+src/main.c(74): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   74 | void closeDoor()
+      |               ^
+      |                void
+src/main.c(78): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   78 |         double x, y, z;
+      |                ^
+src/main.c(96): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   96 |         double x, y, z;
+      |                ^
+src/main.c(93): warning: unused parameter 'size' [-Wunused-parameter]
+   93 | void UART_onInput(char* inputs, uint32_t size)
+      |                                          ^
+9 warnings generated.
+compiling main.c...
+src/UART.c(46): warning: passing 'volatile DMA_Channel_TypeDef *' to parameter of type 'DMA_Channel_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+   46 |         DMA_Init_UARTx(tx, USART1);
+      |                        ^~
+src/DMA.h(14): note: passing argument to parameter 'tx' here
+   14 | void DMA_Init_UARTx(DMA_Channel_TypeDef * tx, USART_TypeDef * uart);
+      |                                           ^
+src/UART.c(67): warning: passing 'volatile DMA_Channel_TypeDef *' to parameter of type 'DMA_Channel_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+   67 |         DMA_Init_UARTx(tx, USART2);
+      |                        ^~
+src/DMA.h(14): note: passing argument to parameter 'tx' here
+   14 | void DMA_Init_UARTx(DMA_Channel_TypeDef * tx, USART_TypeDef * uart);
+      |                                           ^
+src/UART.c(163): warning: result of comparison of constant 256 with expression of type 'uint8_t' (aka 'unsigned char') is always true [-Wtautological-constant-out-of-range-compare]
+  163 |                                 if(i - pending_size >= 0 && i < IO_SIZE)
+      |                                                             ~ ^ ~~~~~~~
+src/UART.c(181): warning: passing 'volatile char[256]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  181 |                 UART_onInput(inputs, input_size);
+      |                              ^~~~~~
+src/UART.h(29): note: passing argument to parameter 'inputs' here
+   29 | void UART_onInput(char* inputs, uint32_t size);
+      |                         ^
+src/UART.c(183): warning: passing 'volatile char[256]' to parameter of type 'const char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  183 |                 memset(inputs,0,strlen(inputs));
+      |                                        ^~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(335): note: passing argument to parameter here
+  335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+      |                                                ^
+src/UART.c(183): warning: passing 'volatile char[256]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  183 |                 memset(inputs,0,strlen(inputs));
+      |                        ^~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+  321 | extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+      |                                         ^
+src/UART.c(195): warning: initializing 'uint8_t *' (aka 'unsigned char *') with an expression of type 'volatile uint8_t *' (aka 'volatile unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  195 |                 uint8_t * temp = active;
+      |                           ^      ~~~~~~
+src/UART.c(198): warning: passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'const char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  198 |                 memset(pending,0,strlen(pending));
+      |                                         ^~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(335): note: passing argument to parameter here
+  335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+      |                                                ^
+src/UART.c(198): warning: passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  198 |                 memset(pending,0,strlen(pending));
+      |                        ^~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+  321 | extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+      |                                         ^
+src/UART.c(200): warning: passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  200 |                 UART_print(active);
+      |                            ^~~~~~
+src/UART.c(138): note: passing argument to parameter 'data' here
+  138 | void UART_print(char* data)
+      |                       ^
+src/UART.c(210): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+  210 |                 char ch = USART1->RDR;
+      |                      ~~   ~~~~~~~~^~~
+src/UART.c(227): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+  227 |                 char ch = USART2->RDR;
+      |                      ~~   ~~~~~~~~^~~
+src/UART.c(242): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+  242 |                 transfer_data(USART1->RDR);
+      |                 ~~~~~~~~~~~~~ ~~~~~~~~^~~
+src/UART.c(244): warning: no newline at end of file [-Wnewline-eof]
+  244 | }
+      |  ^
+src/UART.c(24): warning: unused variable 'buffer' [-Wunused-variable]
+   24 | static char buffer[IO_SIZE];
+      |             ^~~~~~
+src/UART.c(142): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  142 |     while (data[data_length] != '\0')
+      |            ^~~~
+src/UART.c(151): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  151 |                                 active[i] = (uint8_t)data[i];
+      |                                 ^~~~~~
+src/UART.c(151): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  151 |                                 active[i] = (uint8_t)data[i];
+      |                                                      ^~~~
+src/UART.c(165): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  165 |                                         pending[i] = (uint8_t)data[i - pending_size];
+      |                                         ^~~~~~~
+src/UART.c(165): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  165 |                                         pending[i] = (uint8_t)data[i - pending_size];
+      |                                                               ^~~~
+src/UART.c(176): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  176 |         inputs[input_size] = ch; // Append character to input buffer.
+      |         ^~~~~~
+21 warnings generated.
+compiling UART.c...
+src/motor.c(13): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   13 | static const uint32_t HalfStep[8] = {0b1000, 0b1010, 0b0010, 0b0110, 0b0100, 0b0101, 0b0001, 0b1001};
+      |                                      ^
+src/motor.c(13): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   13 | static const uint32_t HalfStep[8] = {0b1000, 0b1010, 0b0010, 0b0110, 0b0100, 0b0101, 0b0001, 0b1001};
+      |                                              ^
+src/motor.c(13): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   13 | static const uint32_t HalfStep[8] = {0b1000, 0b1010, 0b0010, 0b0110, 0b0100, 0b0101, 0b0001, 0b1001};
+      |                                                      ^
+src/motor.c(13): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   13 | static const uint32_t HalfStep[8] = {0b1000, 0b1010, 0b0010, 0b0110, 0b0100, 0b0101, 0b0001, 0b1001};
+      |                                                              ^
+src/motor.c(13): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   13 | static const uint32_t HalfStep[8] = {0b1000, 0b1010, 0b0010, 0b0110, 0b0100, 0b0101, 0b0001, 0b1001};
+      |                                                                      ^
+src/motor.c(13): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   13 | static const uint32_t HalfStep[8] = {0b1000, 0b1010, 0b0010, 0b0110, 0b0100, 0b0101, 0b0001, 0b1001};
+      |                                                                              ^
+src/motor.c(13): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   13 | static const uint32_t HalfStep[8] = {0b1000, 0b1010, 0b0010, 0b0110, 0b0100, 0b0101, 0b0001, 0b1001};
+      |                                                                                      ^
+src/motor.c(13): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   13 | static const uint32_t HalfStep[8] = {0b1000, 0b1010, 0b0010, 0b0110, 0b0100, 0b0101, 0b0001, 0b1001};
+      |                                                                                              ^
+src/motor.c(63): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   63 |     if (0b0001 & HalfStep[step])
+      |         ^
+src/motor.c(66): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   66 |     if (0b0010 & HalfStep[step])
+      |         ^
+src/motor.c(69): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   69 |     if (0b0100 & HalfStep[step])
+      |         ^
+src/motor.c(72): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+   72 |     if (0b1000 & HalfStep[step])
+      |         ^
+src/motor.c(121): warning: no newline at end of file [-Wnewline-eof]
+  121 | }
+      |  ^
+src/motor.c(104): warning: no previous prototype for function 'configureTimer' [-Wmissing-prototypes]
+  104 | void configureTimer(void) {
+      |      ^
+src/motor.c(104): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  104 | void configureTimer(void) {
+      | ^
+      | static 
+src/motor.c(63): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   63 |     if (0b0001 & HalfStep[step])
+      |                  ^~~~~~~~
+src/motor.c(66): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   66 |     if (0b0010 & HalfStep[step])
+      |                  ^~~~~~~~
+src/motor.c(69): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   69 |     if (0b0100 & HalfStep[step])
+      |                  ^~~~~~~~
+src/motor.c(72): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   72 |     if (0b1000 & HalfStep[step])
+      |                  ^~~~~~~~
+18 warnings generated.
+compiling motor.c...
+src/accelerometer.c(10): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   10 |         uint16_t data = ((uint16_t)addr << 8) | (val);
+      |                  ~~~~   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+src/accelerometer.c(24): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   24 |         uint8_t data = 0xFF & (SPI_Transfer_Data((addr | 0x80) << 8));
+      |                                ~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~^~~~
+src/accelerometer.c(59): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+   59 |         int16_t x_raw = ((uint16_t)data_x1 << 8) | data_x0;
+      |                 ~~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+src/accelerometer.c(60): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+   60 |         int16_t y_raw = ((uint16_t)data_y1 << 8) | data_y0;
+      |                 ~~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+src/accelerometer.c(61): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+   61 |         int16_t z_raw = ((uint16_t)data_z1 << 8) | data_z0;
+      |                 ~~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+src/accelerometer.c(64): warning: result of comparison 'int16_t' (aka 'short') > 32767 is always false [-Wtautological-type-limit-compare]
+   64 |         if (x_raw > 32767) x_raw -= 65536;
+      |             ~~~~~ ^ ~~~~~
+src/accelerometer.c(65): warning: result of comparison 'int16_t' (aka 'short') > 32767 is always false [-Wtautological-type-limit-compare]
+   65 |         if (y_raw > 32767) y_raw -= 65536;
+      |             ~~~~~ ^ ~~~~~
+src/accelerometer.c(66): warning: result of comparison 'int16_t' (aka 'short') > 32767 is always false [-Wtautological-type-limit-compare]
+   66 |         if (z_raw > 32767) z_raw -= 65536;
+      |             ~~~~~ ^ ~~~~~
+src/accelerometer.c(75): warning: no newline at end of file [-Wnewline-eof]
+   75 | }
+      |  ^
+9 warnings generated.
+compiling accelerometer.c...
+linking...
+Program Size: Code=14936 RO-data=1316 RW-data=12 ZI-data=2940  
+FromELF: creating hex file...
+".\Objects\project.axf" - 0 Error(s), 69 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32L4xx_DFP.2.7.0.pack
+                Keil::STM32L4xx_DFP@2.7.0
+                STMicroelectronics STM32L4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/cyxli/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/cyxli/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
